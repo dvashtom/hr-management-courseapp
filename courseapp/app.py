@@ -7,23 +7,23 @@ import json
 import random
 from pathlib import Path
 
-st.set_page_config(page_title="ניהול משאבי אנוש", page_icon="🎓", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="ניהול משאבי אנוש", page_icon="🎓", layout="centered", initial_sidebar_state="collapsed")
 st.markdown("""<style>
-.stApp,.stMarkdown,p,h1,h2,h3,h4,h5,h6,li,span,div{direction:rtl;text-align:right}
-.main .block-container{padding-top:1rem;padding-left:1rem;padding-right:1rem;max-width:1000px}
-[data-testid="stSidebar"]{direction:rtl}
-[data-testid="stSidebar"] .stMarkdown{direction:rtl;text-align:right}
+/* RTL for main content only - not sidebar */
+.main .block-container{direction:rtl;text-align:right;padding-top:1rem;padding-left:1rem;padding-right:1rem}
+.main p,.main h1,.main h2,.main h3,.main h4,.main li,.main span,.main div{direction:rtl;text-align:right}
+/* Sidebar - keep LTR to avoid vertical text bug */
+[data-testid="stSidebar"] [data-testid="stMarkdown"]{direction:rtl;text-align:right}
+[data-testid="stSidebar"] p{direction:rtl;text-align:right;white-space:normal!important}
+[data-testid="stSidebar"] h2,[data-testid="stSidebar"] h3{direction:rtl;text-align:right;white-space:normal!important}
+[data-testid="stSidebar"] button span{white-space:normal!important}
 #MainMenu{visibility:hidden}footer{visibility:hidden}
-/* Mobile responsive */
+/* Mobile */
 @media(max-width:768px){
     .main .block-container{padding:0.5rem!important}
-    h1{font-size:1.5rem!important}
-    h2{font-size:1.2rem!important}
-    h3{font-size:1rem!important}
-    .stRadio>div{gap:0.3rem}
-    .stButton>button{padding:0.4rem 0.8rem;font-size:0.9rem}
-    [data-testid="stMetric"]{padding:0.3rem}
-    [data-testid="stMetricValue"]{font-size:1.2rem!important}
+    h1{font-size:1.4rem!important}
+    h2{font-size:1.1rem!important}
+    [data-testid="stMetricValue"]{font-size:1.1rem!important}
 }
 </style>""", unsafe_allow_html=True)
 
