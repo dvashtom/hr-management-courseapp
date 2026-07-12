@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.DS_Store
+courseapp/transcripts/
+node_modules/
+*.egg-info/
+.env
