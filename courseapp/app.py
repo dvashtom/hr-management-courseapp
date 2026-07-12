@@ -10,10 +10,21 @@ from pathlib import Path
 st.set_page_config(page_title="ניהול משאבי אנוש", page_icon="🎓", layout="wide", initial_sidebar_state="expanded")
 st.markdown("""<style>
 .stApp,.stMarkdown,p,h1,h2,h3,h4,h5,h6,li,span,div{direction:rtl;text-align:right}
-.main .block-container{padding-top:2rem;max-width:1000px}
+.main .block-container{padding-top:1rem;padding-left:1rem;padding-right:1rem;max-width:1000px}
 [data-testid="stSidebar"]{direction:rtl}
 [data-testid="stSidebar"] .stMarkdown{direction:rtl;text-align:right}
 #MainMenu{visibility:hidden}footer{visibility:hidden}
+/* Mobile responsive */
+@media(max-width:768px){
+    .main .block-container{padding:0.5rem!important}
+    h1{font-size:1.5rem!important}
+    h2{font-size:1.2rem!important}
+    h3{font-size:1rem!important}
+    .stRadio>div{gap:0.3rem}
+    .stButton>button{padding:0.4rem 0.8rem;font-size:0.9rem}
+    [data-testid="stMetric"]{padding:0.3rem}
+    [data-testid="stMetricValue"]{font-size:1.2rem!important}
+}
 </style>""", unsafe_allow_html=True)
 
 def get_base_dir(): return Path(__file__).parent.parent
